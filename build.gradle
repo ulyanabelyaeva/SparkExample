@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('sparkVersion', '3.2.1')
+}
+
+dependencies {
+    implementation("org.apache.spark:spark-core_2.13:${sparkVersion}")
+    implementation("org.apache.spark:spark-hive_2.13:${sparkVersion}")
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.2'
+}
+
+test {
+    useJUnitPlatform()
+}
